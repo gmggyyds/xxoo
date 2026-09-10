@@ -9,10 +9,12 @@
 给它一个 GitHub 仓、一篇文章、一段视频、一份 PDF，
 它拆成流程图 → **逐环拿你自己的业务去验** → 合成一份只有你有的版本。
 
-![Phases](https://img.shields.io/badge/流程-5%20个%20Phase-10b981?style=flat)
-![Verified](https://img.shields.io/badge/实跑验证-2026--09--11-blue?style=flat)
-![Time](https://img.shields.io/badge/单跑约-50%20分钟-orange?style=flat)
-![License](https://img.shields.io/badge/License-MIT-yellow.svg)
+<p>
+<img src="https://img.shields.io/badge/流程-5%20个%20Phase-10b981?style=flat" alt="Phases">
+<img src="https://img.shields.io/badge/实跑验证-2026--09--11-blue?style=flat" alt="Verified">
+<img src="https://img.shields.io/badge/单跑约-50%20分钟-orange?style=flat" alt="Time">
+<img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License">
+</p>
 
 适用于 **Claude Code** · **Codex** · **Cursor** · 任何支持 Skills 的 agent
 
@@ -29,7 +31,7 @@ cd xxoo && ./install.sh
 
 然后直接跟你的 AI 说人话：
 
-> *"用吸星大法拆一下 https://github.com/xxx/yyy，看看能不能用到我们的 Listing 环节上"*
+> *"用吸星大法拆一下 `github.com/xxx/yyy`，看看能不能用到我们的 Listing 环节上"*
 >
 > *"这个视频讲的方法，对我们供应链有用吗"*
 >
