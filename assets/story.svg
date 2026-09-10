@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540">
+  <defs>
+    <marker id="ar" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <polygon points="0 0, 8 4, 0 8" fill="#5a5a5a"/>
+    </marker>
+    <style>
+      .n { font-family: 'PingFang SC','Hiragino Sans GB','Microsoft YaHei','SimHei','Noto Sans CJK SC',-apple-system,sans-serif; font-size:15px; font-weight:600; fill:#1a1a1a; }
+      .t { font-family: 'PingFang SC','Hiragino Sans GB','Microsoft YaHei','SimHei','Noto Sans CJK SC',-apple-system,sans-serif; font-size:19px; font-weight:700; fill:#1a1a1a; }
+      .s { font-family: 'PingFang SC','Hiragino Sans GB','Microsoft YaHei','SimHei','Noto Sans CJK SC',-apple-system,sans-serif; font-size:13px; font-weight:400; fill:#6a6a6a; }
+      .f { font-family: 'PingFang SC','Hiragino Sans GB','Microsoft YaHei','SimHei','Noto Sans CJK SC',-apple-system,sans-serif; font-size:14px; font-weight:600; fill:#5a5a5a; }
+    </style>
+  </defs>
+  <rect width="960" height="540" fill="#f8f6f3"/>
+  <text x="40" y="94" class="t">吸星大法</text>
+  <text x="134" y="94" class="s">吸进来，化不掉</text>
+  <rect x="40" y="120" width="140" height="66" rx="12" ry="12" fill="#e8e6e3" stroke="#4a4a4a" stroke-width="2.5"/>
+  <text x="110.0" y="159.0" class="n" text-anchor="middle">外面的东西</text>
+  <line x1="180" y1="153.0" x2="211" y2="153.0" stroke="#5a5a5a" stroke-width="2.2" marker-end="url(#ar)"/>
+  <rect x="220" y="120" width="140" height="66" rx="12" ry="12" fill="#a8c5e6" stroke="#4a4a4a" stroke-width="2.5"/>
+  <text x="290.0" y="159.0" class="n" text-anchor="middle">吸进来</text>
+  <line x1="360" y1="153.0" x2="391" y2="153.0" stroke="#5a5a5a" stroke-width="2.2" marker-end="url(#ar)"/>
+  <rect x="400" y="120" width="140" height="66" rx="12" ry="12" fill="#f4e4c1" stroke="#4a4a4a" stroke-width="2.5"/>
+  <text x="470.0" y="150.0" class="n" text-anchor="middle">堆在体内</text>
+  <text x="470.0" y="170.0" class="s" text-anchor="middle">越堆越多</text>
+  <line x1="540" y1="153.0" x2="571" y2="153.0" stroke="#5a5a5a" stroke-width="2.2" marker-end="url(#ar)"/>
+  <rect x="580" y="120" width="140" height="66" rx="12" ry="12" fill="#f4e4c1" stroke="#4a4a4a" stroke-width="2.5"/>
+  <text x="650.0" y="150.0" class="n" text-anchor="middle">互相冲撞</text>
+  <text x="650.0" y="170.0" class="s" text-anchor="middle">不知道听谁的</text>
+  <line x1="720" y1="153.0" x2="751" y2="153.0" stroke="#5a5a5a" stroke-width="2.2" marker-end="url(#ar)"/>
+  <rect x="760" y="120" width="140" height="66" rx="12" ry="12" fill="#e0a08f" stroke="#4a4a4a" stroke-width="2.5"/>
+  <text x="830.0" y="150.0" class="n" text-anchor="middle">一运功就废</text>
+  <text x="830.0" y="170.0" class="s" text-anchor="middle">入魔</text>
+  <text x="40" y="216" class="f">症状：平时相安无事，一到真要干活就发作。只能靠吸新的来压。</text>
+  <text x="40" y="314" class="t">北冥神功</text>
+  <text x="134" y="314" class="s">吸进来，化得掉</text>
+  <rect x="40" y="340" width="140" height="66" rx="12" ry="12" fill="#e8e6e3" stroke="#4a4a4a" stroke-width="2.5"/>
+  <text x="110.0" y="379.0" class="n" text-anchor="middle">外面的东西</text>
+  <line x1="180" y1="373.0" x2="211" y2="373.0" stroke="#5a5a5a" stroke-width="2.2" marker-end="url(#ar)"/>
+  <rect x="220" y="340" width="140" height="66" rx="12" ry="12" fill="#a8c5e6" stroke="#4a4a4a" stroke-width="2.5"/>
+  <text x="290.0" y="379.0" class="n" text-anchor="middle">吸进来</text>
+  <line x1="360" y1="373.0" x2="391" y2="373.0" stroke="#5a5a5a" stroke-width="2.2" marker-end="url(#ar)"/>
+  <rect x="400" y="340" width="140" height="66" rx="12" ry="12" fill="#9dd4c7" stroke="#4a4a4a" stroke-width="2.5"/>
+  <text x="470.0" y="370.0" class="n" text-anchor="middle">逐环对照</text>
+  <text x="470.0" y="390.0" class="s" text-anchor="middle">拿我的业务去验</text>
+  <line x1="540" y1="373.0" x2="571" y2="373.0" stroke="#5a5a5a" stroke-width="2.2" marker-end="url(#ar)"/>
+  <rect x="580" y="340" width="140" height="66" rx="12" ry="12" fill="#9dd4c7" stroke="#4a4a4a" stroke-width="2.5"/>
+  <text x="650.0" y="370.0" class="n" text-anchor="middle">化成我的</text>
+  <text x="650.0" y="390.0" class="s" text-anchor="middle">删 改 沿用</text>
+  <line x1="720" y1="373.0" x2="751" y2="373.0" stroke="#5a5a5a" stroke-width="2.2" marker-end="url(#ar)"/>
+  <rect x="760" y="340" width="140" height="66" rx="12" ry="12" fill="#9dd4c7" stroke="#4a4a4a" stroke-width="2.5"/>
+  <text x="830.0" y="370.0" class="n" text-anchor="middle">我自己的版本</text>
+  <text x="830.0" y="390.0" class="s" text-anchor="middle">别人没有的那部分</text>
+  <text x="40" y="436" class="f">产出：一张只有你有的图，加一份「还缺什么」清单。</text>
+  <line x1="40" y1="252" x2="920" y2="252" stroke="#d8d4cf" stroke-width="1.5" stroke-dasharray="6 5"/>
+  <text x="480" y="516" class="s" text-anchor="middle">差别不在吸了多少，在化没化掉</text>
+</svg>
