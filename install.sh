@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# 安装 / 更新 xixing skill。幂等：重复执行即更新。
+# 安装 / 更新 xxoo skill。幂等：重复执行即更新。
 #
 # 用 cp 不用 ln -s：软链也能加载，但复制式安装才有机会做下面那道**引用断链自检**——
 # SKILL.md 里的 references/xxx.md 按「相对 SKILL.md 所在目录」解析，放错位置时
@@ -9,10 +9,10 @@
 set -euo pipefail
 
 REPO="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-SRC="$REPO/.claude/skills/xixing"
+SRC="$REPO/.claude/skills/xxoo"
 CONFIG_DIR="${CLAUDE_CONFIG_DIR:-$HOME/.claude}"
 DEST_ROOT="${CLAUDE_SKILLS_DIR:-$CONFIG_DIR/skills}"
-DEST="$DEST_ROOT/xixing"
+DEST="$DEST_ROOT/xxoo"
 echo "· 目标配置档：$CONFIG_DIR"
 
 [[ -f "$SRC/SKILL.md" ]] || { echo "✗ 找不到 $SRC/SKILL.md，请在仓库根目录执行"; exit 1; }
@@ -27,7 +27,7 @@ fi
 
 mkdir -p "$DEST_ROOT"
 if [[ -e "$DEST" || -L "$DEST" ]]; then
-  OLD="$(mktemp -d)/xixing-$(date +%Y%m%d-%H%M%S)"
+  OLD="$(mktemp -d)/xxoo-$(date +%Y%m%d-%H%M%S)"
   mv "$DEST" "$OLD"
   echo "· 旧版本已挪到 ${OLD} (没有删除，装坏了可以捞回来)"
 fi

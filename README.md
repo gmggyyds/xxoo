@@ -1,8 +1,8 @@
 <div align="center">
 
-<img src="./banner.png" alt="xixing — 吸星大法" width="100%">
+<img src="./banner.png" alt="xxoo — 吸星大法" width="100%">
 
-# 吸星大法 · xixing
+# 吸星大法 · xxoo
 
 **把别人的东西，化成自己的。**
 一个 agent skill：给它一个 GitHub 仓、一篇文章、一段视频、一份 PDF，
@@ -67,8 +67,8 @@
 ## Quick Start
 
 ```bash
-git clone https://github.com/gmggyyds/xixing.git
-cd xixing && ./install.sh
+git clone https://github.com/gmggyyds/xxoo.git
+cd xxoo && ./install.sh
 ```
 
 首次安装会把业务环节清单模板复制成你自己的那份（已存在时不覆盖，且 `.gitignore` 排除，永不进仓）。
@@ -161,7 +161,7 @@ cd xixing && ./install.sh
 ## 目录
 
 ```
-xixing/
+xxoo/
 ├── SKILL.md                        主流程：5 个 Phase + 硬规则 + 时间预算
 └── references/
     ├── verify-table.md             ← Phase 2 的表、提示词、硬验收、实测样例
@@ -189,7 +189,7 @@ xixing/
 
   ```
   the-great-me   我把自己的      变成 AI 能用的
-  xixing         我把别人的      变成我能用的
+  xxoo         我把别人的      变成我能用的
   ```
 - **选型类 skill** — 回答「要不要装」。本 skill 回答「已经决定学了，怎么化」。**先选型，再吸。**
 - **公司 / 品牌调研类 skill** — 拆的是一个**组织**。本 skill 拆的是**一份方法**。
