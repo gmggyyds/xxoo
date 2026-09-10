@@ -113,9 +113,12 @@ def main():
     frames = [Image.open(p).convert("RGB")
               for p in sorted(glob.glob(os.path.join(tmp, "o*.png")))]
     n = len(frames)
+    # 🔴 循环播放时，人随机看到哪一帧都可能。完成态（文字全出来了）必须
+    #    占掉大部分时长，否则截图/瞥一眼时看到的是没信息的中间帧。
     dur = [70] * n
-    for i in range(n - 16, n):        # 结尾停住，让人读完
-        dur[i] = 110
+    for i in range(n - 18, n):        # 完成态整体放慢
+        dur[i] = 130
+    dur[-1] = 2000                     # 最后一帧长停，循环时主要看到的就是它
     pal = [im.convert("P", palette=Image.ADAPTIVE, colors=32) for im in frames]
     out = os.path.normpath(os.path.join(here, "..", "outro.gif"))
     pal[0].save(out, save_all=True, append_images=pal[1:], duration=dur,
