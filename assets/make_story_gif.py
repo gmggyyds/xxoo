@@ -21,8 +21,18 @@ CJK = "'PingFang SC','Hiragino Sans GB','Microsoft YaHei','SimHei','Noto Sans CJ
 BG, STROKE, ARROW = "#f8f6f3", "#4a4a4a", "#5a5a5a"          # Style 6 Claude Official
 BLUE, TEAL, BEIGE, GRAY, RED = "#a8c5e6", "#9dd4c7", "#f4e4c1", "#e8e6e3", "#e0a08f"
 XS, W, H = [40, 220, 400, 580, 760], 140, 66
-BUILD, FADE, SHAKE, TOTAL = [0, 9, 17, 25, 33], 7, 44, 72
+BUILD, FADE, SHAKE, MELT, TOTAL = [0, 9, 17, 25, 33], 7, 44, 64, 100
 RSVG = shutil.which("rsvg-convert") or "/opt/homebrew/bin/rsvg-convert"
+OUT_W = 680          # README 里按 100% 宽显示，680 足够且省一半体积
+BURN, CHAR = "#c0392b", "#7b241c"          # 走火入魔：烧红 → 焦黑红
+
+
+def lerp_hex(a, b, t):
+    """两个 #rrggbb 之间插值，t∈[0,1]。走火入魔时把节点烧红用。"""
+    t = max(0.0, min(1.0, t))
+    ca = tuple(int(a[i:i+2], 16) for i in (1, 3, 5))
+    cb = tuple(int(b[i:i+2], 16) for i in (1, 3, 5))
+    return "#%02x%02x%02x" % tuple(round(x + (y - x) * t) for x, y in zip(ca, cb))
 
 TOP = [("外面的东西", None, GRAY), ("吸进来", None, BLUE), ("堆在体内", "越堆越多", BEIGE),
        ("互相冲撞", "不知道听谁的", BEIGE), ("一运功就废", "入魔", RED)]
@@ -60,6 +70,7 @@ def frame_svg(f):
             if op <= 0:
                 continue
             dx = dy = rot = 0.0
+            fill = c
             if shake and f >= SHAKE and i >= 2:
                 t = f - SHAKE
                 ramp = min(1.0, t / 8.0)
@@ -67,11 +78,23 @@ def frame_svg(f):
                 dx = amp * math.sin(t * 1.9 + i * 2.1)
                 dy = amp * 0.45 * math.sin(t * 2.7 + i * 1.3)
                 rot = [0, 0, 1.2, 1.8, 2.6][i] * ramp * math.sin(t * 1.6 + i)
+            # 走火入魔：烧红 → 焦黑，抖幅失控，整排往中间塌
+            if shake and f >= MELT:
+                m = min(1.0, (f - MELT) / 22.0)
+                fill = lerp_hex(lerp_hex(c, BURN, min(1.0, m * 1.8)), CHAR, max(0.0, m - 0.55) / 0.45)
+                if i >= 2:
+                    t = f - SHAKE
+                    boost = 1.0 + m * 3.2
+                    dx *= boost
+                    dy *= boost
+                    rot *= 1.0 + m * 4.0
+                    dx += (XS[2] + 150 - XS[i]) * m * 0.30      # 往中间挤，撞成一团
+                    op *= 1.0 - m * 0.25
             x, yy = XS[i] + dx, y + dy
             cx, cy = x + W / 2, yy + H / 2
             A(f'  <g opacity="{op:.2f}" transform="rotate({rot:.2f} {cx:.1f} {cy:.1f})">')
             A(f'    <rect x="{x:.1f}" y="{yy:.1f}" width="{W}" height="{H}" rx="12" ry="12" '
-              f'fill="{c}" stroke="{STROKE}" stroke-width="2.5"/>')
+              f'fill="{fill}" stroke="{STROKE}" stroke-width="2.5"/>')
             if sub2 is None:
                 A(f'    <text x="{cx:.1f}" y="{cy+6:.1f}" class="n" text-anchor="middle">{lbl}</text>')
             else:
@@ -81,6 +104,15 @@ def frame_svg(f):
         bop = max(0.0, min(1.0, (f - 40) / 8))
         if bop > 0:
             A(f'  <text x="40" y="{y+H+34}" class="f" opacity="{bop:.2f}">{badge}</text>')
+        # 走火入魔：红色标记跟着抖，字号越抖越大
+        if shake and f >= MELT + 4:
+            m = min(1.0, (f - MELT - 4) / 14.0)
+            jx = 5.0 * m * math.sin((f - MELT) * 2.3)
+            jy = 3.0 * m * math.sin((f - MELT) * 3.1)
+            sz = 20 + 12 * m
+            A(f'  <text x="{700+jx:.1f}" y="{y-22+jy:.1f}" text-anchor="middle" '
+              f'font-family="{CJK}" font-size="{sz:.1f}px" font-weight="700" '
+              f'fill="{BURN}" opacity="{0.55+0.45*m:.2f}">走火入魔</text>')
 
     track(120, "吸星大法", "吸进来，化不掉", TOP,
           "症状：平时相安无事，一到真要干活就发作。只能靠吸新的来压。", True)
@@ -109,12 +141,13 @@ def main():
     else:
         os.makedirs(tmp)
 
-    for f in range(TOTAL):
+    keep = [f for f in range(TOTAL) if f >= 40 or f % 2 == 0]
+    for f in keep:
         svg = os.path.join(tmp, f"f{f:03d}.svg")
         png = os.path.join(tmp, f"f{f:03d}.png")
         with open(svg, "w") as fh:
             fh.write(frame_svg(f))
-        subprocess.run([RSVG, "-w", "760", svg, "-o", png], check=True)
+        subprocess.run([RSVG, "-w", str(OUT_W), svg, "-o", png], check=True)
 
     frames = [Image.open(p).convert("RGB")
               for p in sorted(glob.glob(os.path.join(tmp, "f*.png")))]
