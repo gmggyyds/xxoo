@@ -220,21 +220,35 @@ xxoo/
 
 ## ⭐ 国民级精品
 
-<img align="right" width="190" src="./mascot.png" alt="国民哥哥 Sam">
+<img align="right" width="150" src="./mascot.png" alt="Sam">
 
-| | 解决什么 |
-|---|---|
-| **[the-great-me](https://github.com/gmggyyds/the-great-me)** | 把**你自己**的经验变成 AI 能用的。每次让 AI 做判断前，它先读你是谁 |
-| **[meta-questions](https://github.com/gmggyyds/meta-questions)** | 问 AI 任何问题之前，先回答的 12 个问题。摸清你的优势、资源与关系网 |
-| **[agents-deep-insights](https://github.com/gmggyyds/agents-deep-insights)** | 看清你的 AI 会话里到底在反复出什么错，哪些是你该改的 |
-| **xxoo** | 你在这儿。把**别人的**东西变成你能用的 |
+**AI 时代最大的瓶颈，是你自己。**
 
-`the-great-me` 和 `xxoo` 是一对：
+不是模型不够强。是它不认识你——不知道你手里有什么、你的判断是怎么下的、
+你到底在哪一步反复拖累了它。
+
+下面四个，每一个拆的都是你身上的一处卡点。
+
+<br clear="all">
+
+| | 你卡在哪 | 它做什么 |
+|---|---|---|
+| **[meta-questions](https://github.com/gmggyyds/meta-questions)**<br><sub>AI 时代的元问题</sub> | AI 给你的是人均答案，因为它不知道你手里有什么 | 12 个问题问出你的优势、资源、关系网。**适合你的，才是最好的** |
+| **[the-great-me](https://github.com/gmggyyds/the-great-me)**<br><sub>更伟大的自己</sub> | 每开一次新对话，AI 都从零重新认识你一遍 | 把你的判断沉成常驻画像，让每次沟通都比上一次更懂你一点 |
+| **xxoo**<br><sub>吸星大法</sub> | 你抄的那套方法论，是给**别人的**生意写的 | 逐环拿你的业务去对，把别人的化成你自己的 |
+| **[agents-deep-insights](https://github.com/gmggyyds/agents-deep-insights)**<br><sub>会话照妖镜</sub> | 你以为是 AI 不行，其实是你在同一个地方反复绊住它 | 扫出你到底在哪拖累了它 |
+
+连起来是一条线：
 
 ```
-the-great-me   我把自己的      变成 AI 能用的
-xxoo           我把别人的      变成我能用的
+问心   我是谁、我手里有什么         meta-questions
+铸我   让 AI 每次都带着这个认知      the-great-me
+吸星   把外面的东西化成我的          xxoo
+明镜   回头看我到底卡在哪            agents-deep-insights
 ```
+
+**适合自己的，才有无限可能。** 这四个东西没有一个是给你标准答案的——
+它们只干一件事：**让 AI 从「认识人类」变成「认识你」。**
 
 ---
 
