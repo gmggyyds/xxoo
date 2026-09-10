@@ -151,8 +151,15 @@ def main():
 
     frames = [Image.open(p).convert("RGB")
               for p in sorted(glob.glob(os.path.join(tmp, "f*.png")))]
+
+    # 🔴 第一帧是静态预览时唯一被看到的那一帧（社交分享卡 / reduced-motion / 邮件）。
+    #    原来第 0 帧只有一个节点，等于半张坏图。改成「两轨都画完、还没发作」那一帧
+    #    （SHAKE-1）——对比最清楚，信息量最大。
+    idx = next((i for i, f in enumerate(keep) if f >= SHAKE - 1), len(keep) - 1)
+    frames.insert(0, frames[idx])
     n = len(frames)
     dur = [70] * n
+    dur[0] = 120                      # 开场那帧只闪一下
     for i in range(n - 18, n):       # 发作段放慢，看得清
         dur[i] = 85
     pal = [im.convert("P", palette=Image.ADAPTIVE, colors=32) for im in frames]
