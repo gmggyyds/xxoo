@@ -218,7 +218,7 @@ xxoo/
 
 ---
 
-## 🏅 国民哥哥，必属精品
+## ⭐ 国民级精品
 
 <img align="right" width="190" src="./mascot.png" alt="国民哥哥 Sam">
 
