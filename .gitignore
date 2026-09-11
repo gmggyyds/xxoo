@@ -3,3 +3,5 @@
 .DS_Store
 .frames/
 _render_check.html
+__pycache__/
+*.pyc

@@ -27,7 +27,10 @@ import sys
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 GH = "/opt/homebrew/bin/gh"
-PAGE = os.path.join(REPO, "_render_check.html")   # 必须在仓根，相对路径的图才加载得到
+PAGE = os.path.join(REPO, "_render_check.html")
+# 🔴 设小了页面会被静默截断，而「找最后有内容的行」会把截图边界
+#    当成页面结尾——你以为裁到了结尾，其实裁的是中段。实撞过两次。
+WINDOW_H = 20000   # 必须在仓根，相对路径的图才加载得到
 
 
 def render(md_path, context, page=PAGE):
@@ -111,7 +114,7 @@ def main():
     print(f"✓ 渲染 {n} 字节")
 
     out = f"/tmp/render_{os.path.basename(repo)}.png"
-    if not shoot(out, 9000, page):
+    if not shoot(out, WINDOW_H, page):
         raise SystemExit("✗ 截图失败")
     print(f"✓ 截图 {out}")
     print("  🔴 截完必须把图 Read 回来肉眼看 —— 尺寸对不代表视觉对")
